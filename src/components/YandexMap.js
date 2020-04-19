@@ -1,85 +1,88 @@
 import React, { Component } from 'react'
 
-const points = [
+
+const defaultIcon = "https://kiss-graph.com/libs/recycle-polytech/icon.png"
+const ZoomByDelta = [
   {
-    pos: [60.007711, 30.374162],
-    text: {
-      balloonContent: '<strong>Пункт раздельного сбора №1</strong><br>Режим работы: 8:00 - 18:00',
-       iconCaption: 'Пункт раздельного сбора №1',
-    },
-    icon: {
-      preset: 'islands#icon',
-      iconColor: '#0095b6'
-    },
+    deltaLessThan: .5,
+    zoom: 11,
   },
   {
-    pos: [60.008927, 30.373703],
-    text: {
-      balloonContent: '<strong>Пункт раздельного сбора №2</strong><br>Режим работы: 8:00 - 18:00',
-       iconCaption: 'Пункт раздельного сбора №2',
-    },
-    icon: {
-      preset: 'islands#icon',
-      iconColor: '#0095b6'
-    },
+    deltaLessThan: 0.035,
+    zoom: 12,
   },
   {
-    pos: [60.007072, 30.376653],
-    text: {
-      balloonContent: '<strong>Пункт раздельного сбора №3</strong><br>Режим работы: 8:00 - 18:00',
-       iconCaption: 'Пункт раздельного сбора №3',
-    },
-    icon: {
-      preset: 'islands#icon',
-      iconColor: '#0095b6'
-    },
+    deltaLessThan: 0.025,
+    zoom: 13,
   },
   {
-    pos: [60.005256, 30.370340],
-    text: {
-      balloonContent: '<strong>Пункт раздельного сбора №4</strong><br>Режим работы: 8:00 - 18:00',
-       iconCaption: 'Пункт раздельного сбора №4',
-    },
-    icon: {
-      preset: 'islands#icon',
-      iconColor: '#0095b6'
-    },
-  },
-  {
-    pos: [60.001567, 30.370843],
-    text: {
-      balloonContent: '<strong>Пункт раздельного сбора №5</strong><br>Режим работы: 8:00 - 18:00',
-       iconCaption: 'Пункт раздельного сбора №5',
-    },
-    icon: {
-      preset: 'islands#icon',
-      iconColor: '#0095b6'
-    },
+    deltaLessThan: 0.005,
+    zoom: 14,
   },
 ]
+
 
 export default class extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      ready: false,
+      replacePoints: this.replacePoints,
+    }
+
+    this.mapRef = new React.createRef()
   }
 
+  static getDerivedStateFromProps(props, state) {
+    if (!state.ready)
+      return
+
+    state.replacePoints(props)
+    return state
+  }
+
+  replacePoints = async props => {
+    this.map.geoObjects.removeAll()
+
+    props.points.forEach(point =>
+      this.map.geoObjects
+        .add(new window.ymaps.Placemark(
+          point.pos,
+          {
+            balloonContent: `
+              <div class="yandex-baloon">
+                <h2 style="margin-bottom: 10px">${point.heading}</h2>
+                <small><i>${point.addressNice || point.address}</i></small><br>
+                <h3 style="margin-bottom: 10px">Время работы: ${point.time}</h3><br>
+                ${point.comment}<br><br>
+                ${point.img !== "" ? `<img style='width: 70%' src=${point.img}></img>` : ""}
+              </div>
+              `,
+            iconCaption: point.heading,
+          },{
+            iconLayout: 'default#image',
+            iconImageHref: point.icon || defaultIcon,
+            iconImageSize: [64, 64],
+            iconImageOffset: [-30, -30]
+          }
+        ))
+    )
+  }
+
+
   componentDidMount = () => {
-    const ymaps = window.ymaps
-
-    ymaps.ready(() => {
+    window.ymaps.ready(() => {
       this.map = new ymaps.Map("map", {
-        center: [60.007177, 30.37599260],
-        zoom: 15
+        center: [59.946897, 30.332514],
+        zoom: 11
       })
-
-      points.forEach(point =>
-        this.map.geoObjects
-          .add(new ymaps.Placemark(point.pos, point.text, point.icon)
-        )
-      )
+      this.setState({ready: true})
     })
   }
 
   render = () =>
-    <div id="map" />
+    <div
+      id="map"
+      ref={this.mapRef}
+    />
 }

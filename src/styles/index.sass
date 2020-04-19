@@ -1,18 +1,120 @@
-body
-  margin: 0
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
+$dark: black
+$orange: #ff8562
 
-code
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
-
-
+#map-react
+  width: 100%
+  height: 500px
+  position: relative
 .App
   width: 100vw
   height: 100vh
-  
-#map
-  width: 100%
-  height: 100%
+  * 
+    box-sizing: border-box
 
+  .random-events
+    width: 100%
+    // height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    &__map-container
+      width: 100%
+      // height: 50vh
+      height: 450px
+      margin-bottom: 20px
+      #map
+        width: 100%
+        height: 100%
+    &__item
+      width: 100%
+      display: table
+      &__img
+        width: 100%
+    &__button-row
+      display: flex
+      justify-content: space-between
+      flex-direction: row
+      @media (max-width: 768px)
+        flex-direction: column
+      &__item
+        background: black
+        color: white
+        outline: none
+        cursor: pointer
+        height: 50px
+        font-size: 18px
+        // width: 46%
+        flex-grow: 1
+        margin: 0 20px 20px
+
+
+.desc
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, .55)
+  cursor: pointer
+  box-sizing: border-box
+  *
+    box-sizing: border-box
+  &__text-area
+    position: absolute
+    width: 70vw
+    height: 70vh
+    left: 15vw
+    top: 15vh
+    background-color: white
+    border: 6px solid black
+    padding: 30px 50px
+    font-size: 20px
+    cursor: default
+    @media (max-width: 1200px)
+      width: 90vw
+      left: 5vw
+      padding: 20px 30px
+    @media (max-width: 768px)
+      width: 95vw
+      left: 2.5vw
+      padding: 10px
+    h1
+      font-size: 26px
+      font-weight: 800
+      margin-bottom: 40px
+    &__button
+      cursor: pointer
+      position: absolute
+      top: 10px
+      right: 10px
+      width: 30px
+      height: 30px
+      &::after, &::before
+        content: ""
+        position: absolute
+        top: 15px
+        left: 0
+        background-color: black
+        width: 30px
+        height: 5px
+      &::after
+        transform: rotate(45deg)
+      &::before
+        transform: rotate(-45deg)
+    &__text-container
+      width: 100%
+      height: 100%
+      overflow-x: hidden
+      overflow-y: scroll
+      img
+        width: 100%
+        height: auto
+
+        
+
+
+.yandex-baloon
+  @media (max-width: 768px)
+    max-width: 260px
+  @media (max-width: 360px)
+    max-width: 180px

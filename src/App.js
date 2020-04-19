@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-import YandexMap from 'components/YandexMap'
-import 'styles/index.sass'
+import { initialState, StoreContext } from './utils/store'
+import RecyclePoints from './components/RecyclePoints'
 
 
-function App() {
-  return (
-    <div className="App">
-      <YandexMap />
-    </div>
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = initialState({
+      state: this.state,
+      setState: this.setState,
+    })
+  }
+
+  render = () => (
+    <StoreContext.Provider value={this.state}>
+      <div className="App">
+        <RecyclePoints />
+      </div>
+    </StoreContext.Provider>
   )
 }
 
