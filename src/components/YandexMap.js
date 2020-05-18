@@ -1,29 +1,69 @@
 import React, { Component } from 'react'
 
+import Icon4 from '../../public/static/media/4.png'
+import Icon2 from '../../public/static/media/2.png'
 
-const defaultIcon = "https://kiss-graph.com/libs/recycle-polytech/icon.png"
+// const defaultIcon = "https://kiss-graph.com/libs/recycle-polytech/icon.png"
+// const defaultIcon = "https://psv4.userapi.com/c856324/u11879299/docs/d6/ae06efa44783/4.png?extra=8HHIdRz4hALH0uypp8SuDqSXGoy9xG_vxXIaEX260xetYB-CABTFQnTtqMhLIzW86lIhn4aCGSJYv-Ly_rfqh5bgYXve1rCRT1_ahqGsFbiuH6Q7NDt9sZ8tzm6pugfTJYQeQk4aEd2fEgnhdrw3uA"
+// const defaultIcon2 = "https://psv4.userapi.com/c856324/u11879299/docs/d15/899a97aced98/2.png?extra=RzRxjOpMkV5KkdsWzr0W1tYsrREKw8paxIUKP-SZJaaYMbjTSJn1nlmOONpotbnfrpbmysDWZ-cPjFixGMBJ823NyTygweTfXjlVIYouZ6GCT557waT__TFJx556HAXs5IesTNSB4m8AjXfX9-Jk6Q"
+
 const ZoomByDelta = [
   {
-    deltaLessThan: .2,
+    deltaLessThan: 5,
+    zoom: 8,
+  },
+  {
+    deltaLessThan: 2.5,
+    zoom: 9,
+  },
+  {
+    deltaLessThan: 1.5,
     zoom: 10,
   },
   {
-    deltaLessThan: .15,
+    deltaLessThan: 1,
     zoom: 11,
   },
   {
-    deltaLessThan: 0.1,
+    deltaLessThan: .5,
     zoom: 12,
   },
   {
-    deltaLessThan: 0.025,
+    deltaLessThan: 0.035,
     zoom: 13,
   },
   {
-    deltaLessThan: 0.005,
+    deltaLessThan: 0.025,
     zoom: 14,
   },
+  {
+    deltaLessThan: 0.004,
+    zoom: 15,
+  },
+  {
+    deltaLessThan: 0.0005,
+    zoom: 16,
+  },
+  {
+    deltaLessThan: 0.00025,
+    zoom: 17,
+  },
 ]
+
+const sizeConverter = (size, W = 228, H = 326) =>
+  ({
+    iconImageSize: [Math.round(W / 10 * size), Math.round(H / 10 * size)],
+    iconImageOffset: [-Math.round(W / 20 * size), -Math.round(H * .95 / 10 * size)]
+  })
+
+const getIcon = icon => {
+  switch (parseInt(icon)) {
+    case 2:
+      return Icon2
+    default:
+      return Icon4
+  }
+}
 
 
 export default class extends Component {
@@ -39,7 +79,7 @@ export default class extends Component {
 
   static getDerivedStateFromProps(props, state) {
     if (!state.ready)
-      return
+      return state
 
     state.replacePoints(props)
     return state
@@ -75,9 +115,8 @@ export default class extends Component {
           iconCaption: point.heading,
         },{
           iconLayout: 'default#image',
-          iconImageHref: point.icon || defaultIcon,
-          iconImageSize: [34, 51],
-          iconImageOffset: [-17, -51]
+          iconImageHref: getIcon(point.icon),
+          ...sizeConverter(1.7)
         }
       ))
 
@@ -85,6 +124,9 @@ export default class extends Component {
   })
 
   replacePoints = async props => {
+    if (!(props.points?.length > 0))
+      return
+
     this.map.geoObjects.removeAll()
     this.minX = null
     this.maxX = null
@@ -111,22 +153,22 @@ export default class extends Component {
     let index = 0
     while (ZoomByDelta[index].deltaLessThan > maxDelta && index < ZoomByDelta.length)
       index++
-    // console.log(index)
     if (index >= 0 && index < ZoomByDelta.length)
       this.map.setZoom(ZoomByDelta[index - 1].zoom)
 
   }
 
 
-  componentDidMount = () => {
-    window.ymaps.ready(() => {
-      this.map = new ymaps.Map("map", {
-        center: [59.946897, 30.332514],
-        zoom: 11
+  componentDidMount = () => 
+    // setTimeout(() =>
+      window.ymaps.ready(() => {
+        this.map = new ymaps.Map("map", {
+          center: [59.946897, 30.332514],
+          zoom: 11
+        })
+        this.setState({ready: true})
       })
-      this.setState({ready: true})
-    })
-  }
+    // , 500)
 
   render = () =>
     <div

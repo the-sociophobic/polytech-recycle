@@ -4,52 +4,144 @@ $orange: #ff8562
 *
   margin: 0
   padding: 0
-  
+  font-family: -apple-system, system-ui, Roboto, "Open Sans", "Helvetica Neue", sans-serif
+  box-sizing: border-box
+
+
+.lev-button
+  outline: none
+  cursor: pointer
+  height: 50px
+  line-height: 50px
+  font-size: 18px
+  flex-grow: 1
+  margin: 0 20px 20px
+  &--cross
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 30px
+    height: 30px
+    &::after, &::before
+      content: ""
+      position: absolute
+      top: 15px
+      left: 0
+      background-color: black
+      width: 30px
+      height: 5px
+    &::after
+      transform: rotate(45deg)
+    &::before
+      transform: rotate(-45deg)
+
+.mobile-only
+  display: none
+  @media screen and ( max-width: 1024px )
+    display: block
+
 #map-react
   width: 100%
   height: 100%
   position: relative
 .App
-  width: 100%
-  height: 100%
-  * 
-    box-sizing: border-box
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  display: flex
+  justify-content: stretch
+  flex-direction: row
+  @media screen and ( max-width: 1024px )
+    flex-direction: column
+    
+
 
   .random-events
-    width: 100%
-    height: 100%
-    position: absolute
-    top: 0
-    left: 0
+    position: relative
+    flex-grow: 3
+    @media screen and ( max-width: 1024px )
+      flex-grow: 2
     &__map-container
       width: 100%
       height: 100%
-      // height: 450px
-      // margin-bottom: 20px
+      position: absolute
+      top: 0
+      left: 0
       #map
         width: 100%
         height: 100%
-    &__item
+
+
+  .project-description
+    @media screen and ( min-width: 1025px )
+      flex-grow: 1
+      border-left: 2px solid black
+      position: relative
+      order: 2
+    @media screen and ( max-width: 1024px )
+      border-top: 2px solid black
+      line-height: 3
+      text-align: center
+      font-size: 1.25em
+    &__container
+      position: absolute
+      top: 0
+      left: 0
       width: 100%
-      display: table
-      &__img
-        width: 100%
-    &__button-row
+      height: 100%
+      overflow: hidden
+      padding: 20px
+      z-index: 1000
+      background-color: white
       display: flex
       justify-content: space-between
-      flex-direction: row
-      @media (max-width: 768px)
-        flex-direction: column
+      flex-direction: column
+      @media screen and ( max-width: 1024px )
+        padding: 10px
+        display: none
+        &--open
+          display: block
+    &__mobile-open
+      text-decoration: underline
+      @extend .mobile-only
+    &__mobile-close
+      @extend .lev-button--cross
+      @extend .mobile-only
+    &__h1
+      font-size: 1.5em
+      line-height: 1.5
+      margin-bottom: 30px
+      @media screen and ( max-width: 1024px )
+        margin-top: 50px
+    &__blocks
+      flex-grow: 1
+      display: flex
+      justify-content: space-around
+      flex-direction: column
       &__item
-        background: black
-        color: white
-        outline: none
-        cursor: pointer
-        height: 50px
-        font-size: 18px
-        // width: 46%
-        flex-grow: 1
-        margin: 0 20px 20px
+        // flex-grow: 1
+        width: 100%
+        height: 100%
+        border: 2px solid black
+        padding: 10px
+        display: flex
+        flex-direction: column
+        margin-bottom: 20px
+        &__h2
+          font-size: 1.25em
+          font-weigth: 1000
+          margin-bottom: .5em
+          line-height: 1.5
+        &__desc
+          font-size: 1em
+          line-height: 1.5
+          height: 100%
+        &__bottom
+          border-top: 1px solid gray
+          line-height: 2
+          margin-top: 1em
+
+
 
 
 .desc
