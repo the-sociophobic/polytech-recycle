@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "829d82121cfe0d961304a4bf2e46ecdc",
+    "revision": "743affafb2548c1323456b253ccb132c",
     "url": "/recycle-polytech/index.html"
   },
   {
-    "revision": "a09249251de724490f96",
+    "revision": "65d717254b28f735b3af",
     "url": "/recycle-polytech/static/css/main.35e60a28.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/recycle-polytech/static/js/2.a44f89d1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a09249251de724490f96",
-    "url": "/recycle-polytech/static/js/main.0ab4ca44.chunk.js"
+    "revision": "65d717254b28f735b3af",
+    "url": "/recycle-polytech/static/js/main.9e27194a.chunk.js"
   },
   {
     "revision": "f88a97f4f21ede7b0380",

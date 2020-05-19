@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/recycle-polytech/static/css/main.35e60a28.chunk.css",
-    "main.js": "/recycle-polytech/static/js/main.0ab4ca44.chunk.js",
-    "main.js.map": "/recycle-polytech/static/js/main.0ab4ca44.chunk.js.map",
+    "main.js": "/recycle-polytech/static/js/main.9e27194a.chunk.js",
+    "main.js.map": "/recycle-polytech/static/js/main.9e27194a.chunk.js.map",
     "runtime-main.js": "/recycle-polytech/static/js/runtime-main.d5690797.js",
     "runtime-main.js.map": "/recycle-polytech/static/js/runtime-main.d5690797.js.map",
     "static/js/2.a44f89d1.chunk.js": "/recycle-polytech/static/js/2.a44f89d1.chunk.js",
     "static/js/2.a44f89d1.chunk.js.map": "/recycle-polytech/static/js/2.a44f89d1.chunk.js.map",
     "index.html": "/recycle-polytech/index.html",
-    "precache-manifest.e0c1b22229675c81037f2da5a122dce1.js": "/recycle-polytech/precache-manifest.e0c1b22229675c81037f2da5a122dce1.js",
+    "precache-manifest.94ef3514745731e601774e75275b189f.js": "/recycle-polytech/precache-manifest.94ef3514745731e601774e75275b189f.js",
     "service-worker.js": "/recycle-polytech/service-worker.js",
     "static/css/main.35e60a28.chunk.css.map": "/recycle-polytech/static/css/main.35e60a28.chunk.css.map",
     "static/js/2.a44f89d1.chunk.js.LICENSE.txt": "/recycle-polytech/static/js/2.a44f89d1.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.d5690797.js",
     "static/js/2.a44f89d1.chunk.js",
     "static/css/main.35e60a28.chunk.css",
-    "static/js/main.0ab4ca44.chunk.js"
+    "static/js/main.9e27194a.chunk.js"
   ]
 }
