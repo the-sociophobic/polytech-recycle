@@ -48,9 +48,9 @@ const infoBlocks = [
       ).reduce((a, b) => Array.isArray(a) ? [...a, ", ", b] : [a, ", ", b])
       } в рамках работы по предмету Основы Проектной Деятельности.
     </>,
-    bottom: <>
-      Исходный код на <ExternalLink to="https://github.com/the-sociophobic/recycle-polytech">github.com</ExternalLink>
-    </>
+    // bottom: <>
+    //   Исходный код на <ExternalLink to="https://github.com/the-sociophobic/recycle-polytech">github.com</ExternalLink>
+    // </>
   },
 ]
 
@@ -96,9 +96,10 @@ class ProjectDescription extends Component {
               <div className="project-description__blocks__item__desc">
                 {item.desc}
               </div>
-              <div className="project-description__blocks__item__bottom">
-                {item.bottom}
-              </div>
+              {item.bottom &&
+                <div className="project-description__blocks__item__bottom">
+                  {item.bottom}
+                </div>}
             </div>
           )}
         </div>
