@@ -3,9 +3,6 @@ import React, { Component } from 'react'
 import Icon4 from '../img/4.png'
 import Icon2 from '../img/2.png'
 
-// const defaultIcon = "https://kiss-graph.com/libs/recycle-polytech/icon.png"
-// const defaultIcon = "https://psv4.userapi.com/c856324/u11879299/docs/d6/ae06efa44783/4.png?extra=8HHIdRz4hALH0uypp8SuDqSXGoy9xG_vxXIaEX260xetYB-CABTFQnTtqMhLIzW86lIhn4aCGSJYv-Ly_rfqh5bgYXve1rCRT1_ahqGsFbiuH6Q7NDt9sZ8tzm6pugfTJYQeQk4aEd2fEgnhdrw3uA"
-// const defaultIcon2 = "https://psv4.userapi.com/c856324/u11879299/docs/d15/899a97aced98/2.png?extra=RzRxjOpMkV5KkdsWzr0W1tYsrREKw8paxIUKP-SZJaaYMbjTSJn1nlmOONpotbnfrpbmysDWZ-cPjFixGMBJ823NyTygweTfXjlVIYouZ6GCT557waT__TFJx556HAXs5IesTNSB4m8AjXfX9-Jk6Q"
 
 const ZoomByDelta = [
   {

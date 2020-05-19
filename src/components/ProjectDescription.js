@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { StoreContext } from '../utils/store'
 import ExternalLink from './ExternalLink'
+import { registerListeners, unregisterListeners } from '../utils/preventMobileScrolling'
 
 
 const infoBlocks = [
@@ -60,11 +61,19 @@ class ProjectDescription extends Component {
     this.state = {
       showMobile: false
     }
+
+    this.aboutButtonRef = React.createRef()
   }
+
+  componentDidMount = () =>
+    registerListeners(this.aboutButtonRef.current)
+  componentWillUnmount = () =>
+    unregisterListeners(this.aboutButtonRef.current)
 
   render = () => (
     <div className="project-description">
       <div
+        ref={this.aboutButtonRef}
         className="project-description__mobile-open"
         onClick={() => this.setState({showMobile: true})}
       >

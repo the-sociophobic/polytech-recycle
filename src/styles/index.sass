@@ -53,6 +53,7 @@ $orange: #ff8562
   flex-direction: row
   @media screen and ( max-width: 1024px )
     flex-direction: column
+    overflow: hidden
     
 
 
@@ -79,7 +80,6 @@ $orange: #ff8562
       position: relative
       order: 2
     @media screen and ( max-width: 1024px )
-      border-top: 2px solid black
       line-height: 3
       text-align: center
       font-size: 1.25em
@@ -97,10 +97,12 @@ $orange: #ff8562
       justify-content: space-between
       flex-direction: column
       @media screen and ( max-width: 1024px )
+        position: fixed
         padding: 10px
         display: none
         &--open
           display: block
+          overflow-y: scroll
     &__mobile-open
       text-decoration: underline
       @extend .mobile-only
