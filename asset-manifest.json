@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/recycle-polytech/static/css/main.adf1ba64.chunk.css",
-    "main.js": "/recycle-polytech/static/js/main.5524b0b4.chunk.js",
-    "main.js.map": "/recycle-polytech/static/js/main.5524b0b4.chunk.js.map",
+    "main.css": "/recycle-polytech/static/css/main.2f09a010.chunk.css",
+    "main.js": "/recycle-polytech/static/js/main.0ab4ca44.chunk.js",
+    "main.js.map": "/recycle-polytech/static/js/main.0ab4ca44.chunk.js.map",
     "runtime-main.js": "/recycle-polytech/static/js/runtime-main.d5690797.js",
     "runtime-main.js.map": "/recycle-polytech/static/js/runtime-main.d5690797.js.map",
     "static/js/2.a44f89d1.chunk.js": "/recycle-polytech/static/js/2.a44f89d1.chunk.js",
     "static/js/2.a44f89d1.chunk.js.map": "/recycle-polytech/static/js/2.a44f89d1.chunk.js.map",
     "index.html": "/recycle-polytech/index.html",
-    "precache-manifest.9c1c8a1c887189fbdc4794cf9a115399.js": "/recycle-polytech/precache-manifest.9c1c8a1c887189fbdc4794cf9a115399.js",
+    "precache-manifest.4c20a5e1c6c5127202eca34d9ccca9a9.js": "/recycle-polytech/precache-manifest.4c20a5e1c6c5127202eca34d9ccca9a9.js",
     "service-worker.js": "/recycle-polytech/service-worker.js",
-    "static/css/main.adf1ba64.chunk.css.map": "/recycle-polytech/static/css/main.adf1ba64.chunk.css.map",
+    "static/css/main.2f09a010.chunk.css.map": "/recycle-polytech/static/css/main.2f09a010.chunk.css.map",
     "static/js/2.a44f89d1.chunk.js.LICENSE.txt": "/recycle-polytech/static/js/2.a44f89d1.chunk.js.LICENSE.txt",
     "static/media/2.png": "/recycle-polytech/static/media/2.95988a1c.png",
     "static/media/4.png": "/recycle-polytech/static/media/4.5e76256e.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.d5690797.js",
     "static/js/2.a44f89d1.chunk.js",
-    "static/css/main.adf1ba64.chunk.css",
-    "static/js/main.5524b0b4.chunk.js"
+    "static/css/main.2f09a010.chunk.css",
+    "static/js/main.0ab4ca44.chunk.js"
   ]
 }
