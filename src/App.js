@@ -4,6 +4,8 @@ import { initialState, StoreContext } from './utils/store'
 import RecyclePoints from './components/RecyclePoints'
 import ProjectDescription from './components/ProjectDescription'
 
+import './styles/index.sass'
+
 
 class App extends Component {
   constructor(props) {

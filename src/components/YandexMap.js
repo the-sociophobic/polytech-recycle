@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Icon4 from '../../public/static/media/4.png'
-import Icon2 from '../../public/static/media/2.png'
+import Icon4 from '../img/4.png'
+import Icon2 from '../img/2.png'
 
 // const defaultIcon = "https://kiss-graph.com/libs/recycle-polytech/icon.png"
 // const defaultIcon = "https://psv4.userapi.com/c856324/u11879299/docs/d6/ae06efa44783/4.png?extra=8HHIdRz4hALH0uypp8SuDqSXGoy9xG_vxXIaEX260xetYB-CABTFQnTtqMhLIzW86lIhn4aCGSJYv-Ly_rfqh5bgYXve1rCRT1_ahqGsFbiuH6Q7NDt9sZ8tzm6pugfTJYQeQk4aEd2fEgnhdrw3uA"
@@ -162,7 +162,7 @@ export default class extends Component {
   componentDidMount = () => 
     // setTimeout(() =>
       window.ymaps.ready(() => {
-        this.map = new ymaps.Map("map", {
+        this.map = new window.ymaps.Map("map", {
           center: [59.946897, 30.332514],
           zoom: 11
         })
