@@ -112,7 +112,7 @@ export default class extends Component {
           iconCaption: point.heading,
         },{
           iconLayout: 'default#image',
-          iconImageHref: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png',
+          iconImageHref: point.icon,
           ...sizeConverter(1.7)
         }
       ))
