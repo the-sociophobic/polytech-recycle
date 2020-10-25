@@ -7,9 +7,9 @@ import { registerListeners, unregisterListeners } from '../utils/preventMobileSc
 
 const infoBlocks = [
   {
-    h2: "Организатор проекта",
+    h2: "Экологичным быть: в Политехе запущен раздельный сбор отходов!",
     desc: <>
-      Студенческое объединение <ExternalLink to="http://regreen.tilda.ws/we">REGREEN</ExternalLink>. Основной задачей объединения является изменение мира к лучшему и вовлечение в культуру устойчивого развития.
+      Активисты экологического объединения <ExternalLink to="https://vk.com/regreen_polytech">ReGreen </ExternalLink> совместно с руководством СПбПУ разработали и внедрили систему раздельного сбора отходов (РСО) на территории университета. Сетки уже установлены рядом с корпусами и функционируют!
     </>,
     bottom: <>
       <ExternalLink to="https://vk.com/regreen_polytech">VK</ExternalLink>, <ExternalLink to="https://www.instagram.com/regreenpolytech/">instagram</ExternalLink>
