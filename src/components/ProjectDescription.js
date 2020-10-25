@@ -85,7 +85,7 @@ class ProjectDescription extends Component {
           onClick={() => this.setState({showMobile: false})}
         />
         <div className="project-description__h1">
-          Карта сбора в Политехе
+          Карта раздельного сбора в Политехе
         </div>
         <div className="project-description__blocks">
           {infoBlocks.map(item =>
