@@ -21,7 +21,7 @@ const infoBlocks = [
       {[
         {
           name: "Роберт Андреев",
-          link: "https://vk.com/lelysh1",
+          link: "https://vk.com/id136622226",
         },
         {
           name: "Лев Васильев",
@@ -46,7 +46,7 @@ const infoBlocks = [
       ].map(person =>
         <ExternalLink to={person.link}>{person.name}</ExternalLink>
       ).reduce((a, b) => Array.isArray(a) ? [...a, ", ", b] : [a, ", ", b])
-      } в рамках работы по предмету Основы Проектной Деятельности.
+      } в рамках Основ Проектной Деятельности.
     </>,
     // bottom: <>
     //   Исходный код на <ExternalLink to="https://github.com/the-sociophobic/recycle-polytech">github.com</ExternalLink>
