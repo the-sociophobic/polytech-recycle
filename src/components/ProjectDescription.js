@@ -29,7 +29,7 @@ const infoBlocks = [
         },
         {
           name: "Армен Барсегян",
-          link: "https://vk.com/doc.schulz",
+          link: "https://vk.com/id263787615",
         },
         {
           name: "Ван Сыюй",
