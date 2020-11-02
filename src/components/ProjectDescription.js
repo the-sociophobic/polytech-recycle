@@ -14,14 +14,10 @@ const infoBlocks = [
     desc: <>
       Контейнеры уже установленны и работают!
     </>,
-    //bottom: <>
-    //  <ExternalLink to="https://vk.com/regreen_polytech">VK</ExternalLink>, <ExternalLink to="https://www.instagram.com/regreenpolytech/">instagram</ExternalLink>
+    bottom: <>
+      Сайт разработан инициативной группой студентов в рамках дисциплины "Основы проектной деятельности".
     </>
-  },
-  {
-    h2: "Сайт разработан инициативной группой студентов в рамках дисциплины "Основы проектной деятельности".",
-    
-    </>,
+  }
     // bottom: <>
     //   Исходный код на <ExternalLink to="https://github.com/the-sociophobic/recycle-polytech">github.com</ExternalLink>
     // </>
