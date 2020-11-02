@@ -11,42 +11,16 @@ const infoBlocks = [
     desc: <>
       Активисты экологического объединения <ExternalLink to="https://vk.com/regreen_polytech">ReGreen</ExternalLink> совместно с руководством СПбПУ разработали и внедрили систему раздельного сбора отходов (РСО) на территории университета. Сетки уже установлены рядом с корпусами и функционируют!
     </>,
-    bottom: <>
-      <ExternalLink to="https://vk.com/regreen_polytech">VK</ExternalLink>, <ExternalLink to="https://www.instagram.com/regreenpolytech/">instagram</ExternalLink>
+    desc: <>
+      Контейнеры уже установленны и работают!
+    </>,
+    //bottom: <>
+    //  <ExternalLink to="https://vk.com/regreen_polytech">VK</ExternalLink>, <ExternalLink to="https://www.instagram.com/regreenpolytech/">instagram</ExternalLink>
     </>
   },
   {
-    h2: "Проект реализовали",
-    desc: <>
-      {[
-        {
-          name: "Роберт Андреев",
-          link: "https://vk.com/id136622226",
-        },
-        {
-          name: "Лев Васильев",
-          link: "https://kiss-graph.com/node/the_sociophobic",
-        },
-        {
-          name: "Армен Барсегян",
-          link: "https://vk.com/id263787615",
-        },
-        {
-          name: "Ван Сыюй",
-          link: "https://vk.com/wangera",
-        },
-        {
-          name: "Жэнь Мэнгуан",
-          link: "https://vk.com/id459591978",
-        },
-        {
-          name: "Игорь Лебедев",
-          link: "https://vk.com/id51388488",
-        },
-      ].map(person =>
-        <ExternalLink to={person.link}>{person.name}</ExternalLink>
-      ).reduce((a, b) => Array.isArray(a) ? [...a, ", ", b] : [a, ", ", b])
-      } в рамках Основ Проектной Деятельности.
+    h2: "Сайт разработан инициативной группой студентов в рамках дисциплины "Основы проектной деятельности".",
+    
     </>,
     // bottom: <>
     //   Исходный код на <ExternalLink to="https://github.com/the-sociophobic/recycle-polytech">github.com</ExternalLink>
