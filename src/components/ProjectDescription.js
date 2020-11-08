@@ -21,7 +21,6 @@ const infoBlocks = [
     // bottom: <>
     //   Исходный код на <ExternalLink to="https://github.com/the-sociophobic/recycle-polytech">github.com</ExternalLink>
     // </>
-  },
 ]
 
 
