@@ -55,12 +55,12 @@ const sizeConverter = (size, W = 228, H = 326) =>
 
 const getIcon = icon => {
   switch (parseInt(icon)) {
-    case 4:
-      return Icon4
-    case 7:
+    case 96:
+      return Icon2
+    case 0:
       return Icon7  
     default:
-      return Icon2
+      return Icon4
   }
 }
 
