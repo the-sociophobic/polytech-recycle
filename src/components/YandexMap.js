@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Icon4 from '../img/4.png'
 import Icon2 from '../img/2.png'
-
+import Icon7 from '../img/7.png'
 
 const ZoomByDelta = [
   {
@@ -57,6 +57,8 @@ const getIcon = icon => {
   switch (parseInt(icon)) {
     case 4:
       return Icon4
+    case 7:
+      return Icon7  
     default:
       return Icon2
   }
@@ -112,7 +114,7 @@ export default class extends Component {
           iconCaption: point.heading,
         },{
           iconLayout: 'default#image',
-          iconImageHref: point.icon,
+          iconImageHref: getIcon(point.icon),
           ...sizeConverter(1.7)
         }
       ))
