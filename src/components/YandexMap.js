@@ -3,7 +3,10 @@ import React, { Component } from 'react'
 import Icon4 from '../img/4.png'
 import Icon2 from '../img/2.png'
 import Icon7 from '../img/7.png'
-
+import Icon8 from '../img/8.png'
+import Icon9 from '../img/9.png'
+import Icon10 from '../img/10.png'
+import Icon22 from '../img/22.png'
 const ZoomByDelta = [
   {
     deltaLessThan: 5,
@@ -60,7 +63,15 @@ const getIcon = icon => {
     case 1:
       return Icon4
     case 2:
-      return Icon7  
+      return Icon7
+    case 3:
+      return Icon8 
+    case 4:
+      return Icon9
+    case 5:
+      return Icon10
+    case 6:
+      return Icon22
     default:
       return Icon2
   }
