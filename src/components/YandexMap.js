@@ -7,6 +7,7 @@ import Icon8 from '../img/8.png'
 import Icon9 from '../img/9.png'
 import Icon10 from '../img/10.png'
 import Icon22 from '../img/22.png'
+import Icon23 from '../img/23.png'
 const ZoomByDelta = [
   {
     deltaLessThan: 5,
@@ -72,6 +73,8 @@ const getIcon = icon => {
       return Icon10
     case 6:
       return Icon22
+    case 7:
+      return Icon23
     default:
       return Icon2
   }
