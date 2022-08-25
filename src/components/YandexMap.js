@@ -123,7 +123,7 @@ export default class extends Component {
               <h2 style="margin-bottom: 10px">${point.heading}</h2>
               <small><i>${point.addressNice || point.address}</i></small><br>
               <h3 style="margin-bottom: 10px">Время работы: ${point.time}</h3><br>
-              ${point.img !== "" ? `<img style='width: 10%' src=${point.img}></img>` : ""}<br>
+              ${point.img !== "" ? `<img style='width: 500px' src=${point.img}></img>` : ""}<br>
               ${point.comment}
               
             </div>
