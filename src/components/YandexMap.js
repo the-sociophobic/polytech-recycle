@@ -122,8 +122,8 @@ export default class extends Component {
             <div class="yandex-baloon">
               <h2 style="margin-bottom: 10px">${point.heading}</h2>
               <small><i>${point.addressNice || point.address}</i></small><br>
-              <h3 style="margin-bottom: 10px">Время работы: ${point.time}</h3><br><br>
-              ${point.img !== "" ? `<img style='size: 100%' src=${point.img}></img>` : ""}<br>
+              <h3 style="margin-bottom: 10px">Время работы: ${point.time}</h3><br>
+              ${point.img !== "" ? `<img style='size: 90%' src=${point.img}></img>` : ""}<br>
               ${point.comment}
               
             </div>
