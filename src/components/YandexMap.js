@@ -147,34 +147,11 @@ export default class extends Component {
       return
 
     this.map.geoObjects.removeAll()
-    this.minX = null
-    this.maxX = null
-    this.minY = null
-    this.maxY = null
 
     for (let pointIndex in props.points) {
       const point = props.points[pointIndex]
       const res = await this.addPoint(point)
-
-      this.minX = this.minX === null ? res[0] : Math.min(res[0], this.minX)
-      this.maxX = this.maxX === null ? res[0] : Math.max(res[0], this.maxX)
-      this.minY = this.minY === null ? res[1] : Math.min(res[1], this.minY)
-      this.maxY = this.maxY === null ? res[1] : Math.max(res[1], this.maxY)
     }
-
-    this.map.setCenter([(this.minX + this.maxX) / 2, (this.minY + this.maxY) / 2])
-
-    const deltaX = this.maxX - this.minX
-    const deltaY = this.maxY - this.minY
-    const aspect = this.mapRef.current.clientWidth / this.mapRef.current.clientHeight
-    const maxDelta = deltaX / deltaY > aspect ? deltaY : deltaX
-    
-    let index = 0
-    while (ZoomByDelta[index].deltaLessThan > maxDelta && index < ZoomByDelta.length)
-      index++
-    if (index >= 0 && index < ZoomByDelta.length)
-      this.map.setZoom(ZoomByDelta[index - 1].zoom)
-
   }
 
 
@@ -182,8 +159,9 @@ export default class extends Component {
     // setTimeout(() =>
       window.ymaps.ready(() => {
         this.map = new window.ymaps.Map("map", {
-          center: [59.946897, 30.332514],
-          zoom: 11
+          center: [59.999707, 30.366714],
+          zoom: 13,
+          controls: ['searchControl', 'typeSelector', 'zoomControl', 'geolocationControl', 'fullscreenControl']
         })
         this.setState({ready: true})
       })
