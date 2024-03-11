@@ -68,10 +68,10 @@ const ZoomByDelta = [
   },
 ]
 
-const sizeConverter = (size, W = 228, H = 370) =>
+const sizeConverter = (size, W = 370, H = 370) =>
   ({
     iconImageSize: [Math.round(W / 10 * size), Math.round(H / 10 * size)],
-    iconImageOffset: [-Math.round(W / 20 * size), -Math.round(H * .95 / 10 * size)]
+    iconImageOffset: [-Math.round(W * .95 / 10 * size), -Math.round(H * .95 / 10 * size)]
   })
 
   const getIcon = icon => {
