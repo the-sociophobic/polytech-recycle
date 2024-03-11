@@ -102,6 +102,7 @@ export default class extends Component {
 
   addPoint = async point => new Promise(async (res, rej) => {
     let pos
+    let bubbleImage
 
     if (point.pos)
       pos = point.pos
@@ -112,7 +113,9 @@ export default class extends Component {
       const result = await window.ymaps.geocode("Россия, Санкт-Петербург, " + point.address)
       pos = result.geoObjects.get(0).geometry._coordinates
     }
-
+    bubbleImage = point.img.replace(/^\[.*\]\(/gim, '');
+    bubbleImage = bubbleImage.replace(/album.*/gim, 'album');
+    bubbleImage = bubbleImage.replace(/\[/gim, '');
 
     const added = this.map.geoObjects
       .add(new window.ymaps.Placemark(
@@ -123,7 +126,7 @@ export default class extends Component {
               <h2 style="margin-bottom: 10px">${point.heading}</h2>
               <small><i>${point.addressNice || point.address}</i></small><br>
               <h3 style="margin-bottom: 10px">Время работы: ${point.time}</h3><br>
-              ${point.img !== "" ? `<img style='width: 100%' src=${point.img}></img>` : ""}<br>
+              ${point.img !== "" ? `<img style='width: 100%' src=${bubbleImage}></img>` : ""}<br>
               ${point.comment}
               
             </div>
