@@ -25,53 +25,11 @@ import IconPolyCafe from '../img/new/100.png'
 import IconPolyWater from '../img/new/101.png'
 import IconPolyBike from '../img/new/102.png'
 
-const ZoomByDelta = [
-  {
-    deltaLessThan: 5,
-    zoom: 8,
-  },
-  {
-    deltaLessThan: 2.5,
-    zoom: 9,
-  },
-  {
-    deltaLessThan: 1.5,
-    zoom: 10,
-  },
-  {
-    deltaLessThan: 1,
-    zoom: 11,
-  },
-  {
-    deltaLessThan: .5,
-    zoom: 12,
-  },
-  {
-    deltaLessThan: 0.035,
-    zoom: 13,
-  },
-  {
-    deltaLessThan: 0.025,
-    zoom: 14,
-  },
-  {
-    deltaLessThan: 0.004,
-    zoom: 15,
-  },
-  {
-    deltaLessThan: 0.0005,
-    zoom: 16,
-  },
-  {
-    deltaLessThan: 0.00025,
-    zoom: 17,
-  },
-]
 
-const sizeConverter = (size, W = 370, H = 370) =>
+const sizeConverter = (size, W = 228, H = 370) =>
   ({
     iconImageSize: [Math.round(W / 10 * size), Math.round(H / 10 * size)],
-    iconImageOffset: [-Math.round(W * .95 / 10 * size), -Math.round(H * .95 / 10 * size)]
+    iconImageOffset: [-Math.round(W / 20 * size), -Math.round(H * .95 / 10 * size)]
   })
 
   const getIcon = icon => {
