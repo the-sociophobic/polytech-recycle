@@ -1,13 +1,30 @@
 import React, { Component } from 'react'
 
-import Icon4 from '../img/4.png'
-import Icon2 from '../img/2.png'
-import Icon7 from '../img/7.png'
-import Icon8 from '../img/8.png'
-import Icon9 from '../img/9.png'
-import Icon10 from '../img/10.png'
-import Icon22 from '../img/22.png'
-import Icon23 from '../img/23.png'
+import IconPolyPlastic from '../img/new/0.png'
+import IconPolyPaper from '../img/new/1.png'
+import IconPolyGlass from '../img/new/2.png'
+import IconPolyRare from '../img/new/3.png'
+import IconPolyBattery from '../img/new/4.png'
+import IconPolyPlasticPaper from '../img/new/5.png'
+import IconPolyPlasticGlass from '../img/new/6.png'
+import IconPolyPaperGlass from '../img/new/7.png'
+import IconPolyPlasticPaperGlass from '../img/new/8.png'
+import IconPolyCaps from '../img/new/9.png'
+import IconPolyVolunteer from '../img/new/10.png'
+import IconPlastic from '../img/new/90.png'
+import IconPaper from '../img/new/91.png'
+import IconGlass from '../img/new/92.png'
+import IconRare from '../img/new/93.png'
+import IconBattery from '../img/new/94.png'
+import IconPlasticPaper from '../img/new/95.png'
+import IconPlasticGlass from '../img/new/96.png'
+import IconPaperGlass from '../img/new/97.png'
+import IconPlasticPaperGlass from '../img/new/98.png'
+import IconCaps from '../img/new/99.png'
+import IconPolyCafe from '../img/new/100.png'
+import IconPolyWater from '../img/new/101.png'
+import IconPolyBike from '../img/new/102.png'
+
 const ZoomByDelta = [
   {
     deltaLessThan: 5,
@@ -57,27 +74,59 @@ const sizeConverter = (size, W = 228, H = 370) =>
     iconImageOffset: [-Math.round(W / 20 * size), -Math.round(H * .95 / 10 * size)]
   })
 
-const getIcon = icon => {
-  switch (parseInt(icon)) {
-    case 0:
-      return Icon2
-    case 1:
-      return Icon4
-    case 2:
-      return Icon7
-    case 3:
-      return Icon8 
-    case 4:
-      return Icon9
-    case 5:
-      return Icon10
-    case 6:
-      return Icon22
-    case 7:
-      return Icon23
-    default:
-      return Icon2
-  }
+  const getIcon = icon => {
+    switch (parseInt(icon)) {
+      case 0:
+        return IconPolyPlastic
+      case 1:
+        return IconPolyPaper
+      case 2:
+        return IconPolyGlass
+      case 3:
+        return IconPolyRare 
+      case 4:
+        return IconPolyBattery
+      case 5:
+        return IconPolyPlasticPaper
+      case 6:
+        return IconPolyPlasticGlass
+      case 7:
+        return IconPolyPaperGlass
+      case 8:
+        return IconPolyPlasticPaperGlass
+      case 9:
+        return IconPolyCaps
+      case 10:
+        return IconPolyVolunteer
+      case 90:
+        return IconPlastic
+      case 91:
+        return IconPaper
+      case 92:
+        return IconGlass
+      case 93:
+        return IconRare 
+      case 94:
+        return IconBattery
+      case 95:
+        return IconPlasticPaper
+      case 96:
+        return IconPlasticGlass
+      case 97:
+        return IconPaperGlass
+      case 98:
+        return IconPlasticPaperGlass
+      case 99:
+        return IconCaps
+      case 100:
+        return IconPolyCafe
+      case 101:
+        return IconPolyWater
+      case 102:
+        return IconPolyBike
+      default:
+        return IconPolyBike
+    }
 }
 
 
